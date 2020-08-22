@@ -12,7 +12,7 @@
 
   <body>
     <header class="header">
-    <p class="header_pageTitle">Boards</p>
+    <%= link_to "Boards", comments_index_path, class: 'header_pageTitle' %> 
     </header>
     <%= yield %>
     <p class="notice"><%= notice %></p>
