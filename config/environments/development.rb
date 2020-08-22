@@ -1,17 +1,28 @@
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
-
+  
   # In the development environment your application's code is reloaded on
   # every request. This slows down response time but is perfect for development
   # since you don't have to restart the web server when you make code changes.
   config.cache_classes = false
-
+  
   # Do not eager load code on boot.
   config.eager_load = false
-
+  
   # Show full error reports.
   config.consider_all_requests_local = true
+  
+  config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
 
+  config.action_mailer.smtp_settings = {
+    :enable_starttls_auto => true,
+    :address => "smtp.gmail.com",
+    :port => 587,
+    :domain => 'smtp.gmail.com',
+    :user_name => "xxxxxxx@gmail.com", #gmailアドレス
+    :password => "xxxxxxxxxxx", #gmailパスワード
+    :authentication => 'login',
+  }
   # Enable/disable caching. By default caching is disabled.
   # Run rails dev:cache to toggle caching.
   if Rails.root.join('tmp', 'caching-dev.txt').exist?
