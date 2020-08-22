@@ -38,21 +38,15 @@
 .dropdown:hover .dropdown-content {
   display: block;
 }
-// 以下、自分で追記
-.field {
-  background-color: #f4f4f4; 
+.text {
+  margin-bottom: 10px;
+  height: 40px;
+  width: 100%;
+  border: 0px none;
   border-radius: 10px;
+  background-color: #f4f4f4;
 }
 
-.btn {
-  text-align: center;
-  margin: auto;
-  width: 362px;
-  height: 40px;
-  display: inline-block;
-  padding: 0.5em 1em;
-  text-decoration: none;
-  color: #FFF;
-  background: #F8BD1C;
-  border-radius: 4px;
+h2 {
+  margin-bottom: 33px;
 }
