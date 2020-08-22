@@ -8,11 +8,10 @@
   padding: 16px 0;
   margin-bottom: 32px;
   font-weight: bold;
-  position: absolute;
+  // position: fixed;
+  // position: relative;
+  // top: 400px;
   bottom: 0;
-  font-family: Avenir;
-  font-style: normal;
-  font-weight: 800;
   font-size: 18px;
   line-height: 25px;
   border-radius: 4px;
@@ -28,6 +27,6 @@
   width: 100%;
   text-align: center;
   color: $primary-color;
-  padding: 16px 0;
+  // padding: 16px 0;
   font-weight: bold;
 }
