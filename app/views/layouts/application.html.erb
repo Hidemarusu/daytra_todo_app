@@ -11,11 +11,13 @@
   </head>
 
   <body>
-    <header class="header">
-    <%= link_to "Boards", comments_index_path, class: 'header_pageTitle' %> 
-    </header>
-    <%= yield %>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
+    <div class="container">
+      <header class="header">
+      <%= link_to "Boards", comments_index_path, class: 'header_pageTitle' %> 
+      </header>
+      <%= yield %>
+      <p class="notice"><%= notice %></p>
+      <p class="alert"><%= alert %></p>
+    </div>
   </body>
 </html>

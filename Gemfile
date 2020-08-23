@@ -25,6 +25,9 @@ gem 'jbuilder', '~> 2.7'
 # ログイン機能の追加
 gem 'devise'
 
+# 日本語化
+gem 'rails-i18n'
+
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 

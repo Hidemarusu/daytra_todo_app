@@ -1,7 +1,15 @@
-<h1>新規タスク</h1>
+<h1>New Board</h1>
+<% if @task.errors.any? %>
+  <div>
+    <ul style="color: red">
+      <% @task.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
 <%= form_for(@task) do |f| %>
   <div><%= f.label :title %></div>       #title（タスク）の項目名
   <div><%= f.text_field :title %></div>  #title（タスク）の入力エリア
-  <div><%= f.submit %></div>             #送信ボタン
 <% end %>
 <%= link_to '戻る', tasks_path %>
