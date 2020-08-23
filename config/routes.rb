@@ -5,4 +5,6 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   root 'comments#index' # ここを追記します
   get 'comments/index' # 自動で設定されたルーティング
+  get 'tasks/index'
+  resources :tasks
 end
