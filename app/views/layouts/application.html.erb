@@ -13,6 +13,13 @@
     <div class="container">
       <header class="header">
       <%= link_to "Boards", comments_index_path, class: 'header_pageTitle' %> 
+        <div class="dropdown">
+          <%= image_tag 'default-avatar.png', class: 'header_avatar dropbtn'%>
+            <div class="dropdown-content">
+              <a href="#">プロフィール</a>
+              <a href="#">ログアウト</a>
+            </div>
+        </div>
       </header>
       <%= yield %>
       <p class="notice"><%= notice %></p>
