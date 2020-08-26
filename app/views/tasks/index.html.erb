@@ -7,8 +7,27 @@
   </thead>
   <tbody>
     <% @tasks.each do |task| %>
+      <div class="card">
+        <div class="card_image">
+          <%= image_tag 'eyecatch1.png'%>
+        </div>
+        <div class="card_content">
+         <div class="card_heart">
+          <%= image_tag 'heart.svg'%>
+          <span>23</span>
+         </div>
+         <div class="card_detail">
+          <%= image_tag 'default-avatar.png'%>
+          <div>
+            <p>hidemaru</p>
+            <p>2020/8/26</p>
+          </div>
+         </div>
+        </div>
+      </div>
       <tr>
         <td><%= task.title %></td>
+        <td><%= task.content %></td>
         <td><%= link_to '編集', edit_task_path(task) %></td>
         <td><%= link_to '削除', task_path(task), method: :delete %></td>
       </tr>
