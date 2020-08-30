@@ -9,10 +9,10 @@
   </div>
 <% end %>
 <%= form_for(@task) do |f| %>
-  <div><%= f.label :title %></div>       #title（タスク）の項目名
-  <div><%= f.text_field :title %></div>  #title（タスク）の入力エリア
-  <div><%= f.label :content %></div>       #content（内容）の項目名
-  <div><%= f.text_field :content, class:"" %></div>  #content（内容）の入力エリア
+  <div><%= f.label :title %></div>
+  <div><%= f.text_field :title,class: "text"  %></div>
+  <div><%= f.label :content %></div>
+  <div><%= f.text_field :content, class:"text" %></div>
   <%= f.submit '投稿' , class: "btn-primary"%>
 <% end %>
 <%= link_to '戻る', tasks_path %>
