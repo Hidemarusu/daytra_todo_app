@@ -3,12 +3,16 @@ class TasksController < ApplicationController
     @tasks = Task.all
   end
 
+  def show
+    @task = Task.find(params[:id])
+  end
+
   def new
-    @task = Task.new
+    @task = current_user.tasks.build
   end
 
   def create
-    @task = Task.create(task_params)
+    @task = current_user.tasks.build(task_params)
     if @task.save
       redirect_to tasks_url
     else
@@ -17,22 +21,23 @@ class TasksController < ApplicationController
   end
 
   def edit
-    @task = Task.find(params[:id])
+    @task = current_user.tasks.find(params[:id])
   end
 
   def update
-    @task = Task.find(params[:id])
+    @task = current_user.tasks.find(params[:id])
     if @task.update(task_params)
-      redirect_to tasks_url
+      redirect_to tasks_url, notice: '更新できました'
     else
+      flash.now[:error] = '更新できませんでした'
       render 'tasks/edit'
     end
   end
 
   def destroy
-    @task = Task.find(params[:id])
+    @task = current_user.tasks.find(params[:id])
     @task.destroy
-    redirect_to tasks_url
+    redirect_to tasks_url, notice: '削除に成功しました'
   end
 
   private
