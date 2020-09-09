@@ -6,7 +6,8 @@
 
 .dropdown {
   position: relative;
-  display: inline-block;
+  display: inline;
+  float: right;
 }
 
 .dropdown-content {
