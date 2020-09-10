@@ -1,0 +1,14 @@
+.card
+  %h1.card_title= task.title
+  .card_detail
+    = image_tag 'default-avatar.png'
+    %div
+      %p hide
+      %p 2020/08/31
+  .card_detail_actions
+    .dropdown
+      = image_tag 'actions.svg', class: 'dropbtn'
+      .dropdown-content.mini
+        %p 編集
+        %p 削除
+  .task_content

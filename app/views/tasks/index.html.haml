@@ -1,0 +1,18 @@
+%h1 All Boards
+- @tasks.each do |task|
+  .card
+    .card_content
+      .card_title
+        = task.title
+      .dropdown
+        = image_tag 'actions.svg', class: 'dropbtn'
+        .dropdown-content.mini
+          = link_to '編集', edit_task_path(task)
+          = link_to '削除', task_path(task), method: :delete, confirm: '本当に削除してもよろしいですか？'
+      .card_detail
+        = task.content
+      .card_detail
+        = image_tag 'default-avatar.png'
+/ ログアウトをする
+.board
+  = link_to '+ Add new Board', new_task_path
