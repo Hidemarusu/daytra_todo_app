@@ -42,7 +42,7 @@ before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destro
   end
 
   private
-    def task_params
-      params.require(:task).permit(:title, :content)
-    end
+  def task_params
+    params.require(:task).permit(:title, :content)
+  end
 end

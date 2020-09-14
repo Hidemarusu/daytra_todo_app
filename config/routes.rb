@@ -8,4 +8,5 @@ Rails.application.routes.draw do
   get 'tasks/index'
   resources :tasks
   # resources :tasks, only: [:show]
+  resources :dtasks
 end

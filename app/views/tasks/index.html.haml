@@ -2,13 +2,15 @@
 - @tasks.each do |task|
   .card
     .card_content
+      -# = link_to index_dtask_path
       .card_title
         = task.title
-      .dropdown
-        = image_tag 'actions.svg', class: 'dropbtn'
-        .dropdown-content.mini
-          = link_to '編集', edit_task_path(task)
-          = link_to '削除', task_path(task), method: :delete, confirm: '本当に削除してもよろしいですか？'
+      - if user_signed_in? && current_user.has_written?(task)
+        .dropdown
+          = image_tag 'actions.svg', class: 'dropbtn'
+          .dropdown-content.mini
+            = link_to '編集', edit_task_path(task)
+            = link_to '削除', task_path(task), method: :delete, confirm: '本当に削除してもよろしいですか？'
       .card_detail
         = task.content
       .card_detail
