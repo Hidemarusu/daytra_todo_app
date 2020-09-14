@@ -1,0 +1,19 @@
+%h1 Brackets
+- @dtasks.each do |task|
+  .card
+    .card_content
+      .card_title
+        = dtask.title
+      - if user_signed_in? && current_user.has_written?(task)
+        .dropdown
+          = image_tag 'actions.svg', class: 'dropbtn'
+          .dropdown-content.mini
+            = link_to '編集', edit_dtask_path(dtask)
+            = link_to '削除', dtask_path(dtask), method: :delete, confirm: '本当に削除してもよろしいですか？'
+      .card_detail
+        = dtask.content
+      .card_detail
+        = image_tag 'default-avatar.png'
+/ ログアウトをする
+.board
+  = link_to '+ Add new card', new_dtask_path

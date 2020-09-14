@@ -1,0 +1,2 @@
+class Dtask < ApplicationRecord
+end
