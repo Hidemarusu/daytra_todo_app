@@ -13,7 +13,7 @@ class DtasksController < ApplicationController
   end
 
   def create
-    @dtask = current_user.dtasks.build(task_params)
+    @dtask = current_user.dtasks.build(dtask_params)
     if @dtask.save
       redirect_to tasks_url
     else

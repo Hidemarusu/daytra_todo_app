@@ -5,6 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_many :tasks, dependent: :destroy
+  has_many :dtasks, dependent: :destroy
 
   def has_written?(task)
     tasks.exists?(id: task.id)
